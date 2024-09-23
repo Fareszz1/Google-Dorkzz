@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Google Dorkzz</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Google Dorkzz</h1>
+
+        <div id="Dorks">
+
+            <div class="outputcontainer text-center">
+                <div class="input-group mx-auto" style="width: 50%;">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="searchIcon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001a1.007 1.007 0 0 0-.113.112l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85a1.007 1.007 0 0 0-.112-.113zm-5.41 1.397a5.5 5.5 0 1 1 7.778-7.778 5.5 5.5 0 0 1-7.778 7.778z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" id="searchBar" onkeyup="filterDorks()"
+                        placeholder="Search for dorks..">
+                </div>
+                <button class="buttonGenerate" onclick="GenerateDorks()">Generate</button>
+                <button class="buttonGoogle" onclick="Googleit()">Google it</button>
+                <button class="buttonZzDorks" onclick="generateGoogleZzDorkQuery()">Zz Dorks</button>
+                <button class="buttonZzDorks" onclick="downloadDorkZzWithSite()">Zz Download</button>
+                <button class="buttonReset" onclick="reset()">Reset</button>
+
+                <button class="buttonStt" onclick="settings()">settings</button>
+
+
+                <div class="output" id="output">
+
+                </div>
+
+                <button class="copy" onclick="copyToClipboard()">
+                    <span>
+                        <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 6.35 6.35"
+                            y="0" x="0" height="20" width="20" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" class="clipboard">
+                            <g>
+                                <path fill="white"
+                                    d="M2.43.265c-.3 0-.548.236-.573.53h-.328a.74.74 0 0 0-.735.734v3.822a.74.74 0 0 0 .735.734H4.82a.74.74 0 0 0 .735-.734V1.529a.74.74 0 0 0-.735-.735h-.328a.58.58 0 0 0-.573-.53zm0 .529h1.49c.032 0 .049.017.049.049v.431c0 .032-.017.049-.049.049H2.43c-.032 0-.05-.017-.05-.049V.843c0-.032.018-.05.05-.05zm-.901.53h.328c.026.292.274.528.573.528h1.49a.58.58 0 0 0 .573-.529h.328a.2.2 0 0 1 .206.206v3.822a.2.2 0 0 1-.206.205H1.53a.2.2 0 0 1-.206-.205V1.529a.2.2 0 0 1 .206-.206z">
+                                </path>
+                            </g>
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="output" id="stared">
+
+                </div>
+
+            </div>
+
+            <div class="outputcontainer">
+                <div class="input-group">
+                    <span class="input-group-text">site:</span>
+                    <input type="text" class="form-control" id="site" name="site" placeholder="example: example.com">
+                </div>
+                <label>Finds results from a specific site or domain</label>
+            </div>
+
+            <div class="outputcontainer">
+                <div class="input-group">
+                    <span class="input-group-text">intitle:</span>
+                    <input type="text" class="form-control" id="intitle" name="intitle"
+                        placeholder="example: machine learning">
+                </div>
+                <label>Finds strings in the title of a page</label>
+            </div>
+
+            <div class="outputcontainer">
+                <div class="input-group">
+                    <span class="input-group-text">inurl:</span>
+                    <input type="text" class="form-control" id="inurl" name="inurl" placeholder="example: news">
+                </div>
+                <label>Finds pages with a specific string in the URL</label>
+            </div>
+
+            <div class="outputcontainer">
+                <div class="input-group">
+                    <span class="input-group-text">intext:</span>
+                    <input type="text" class="form-control" id="intext" name="intext"
+                        placeholder="example: AI research">
+                </div>
+                <label>Finds pages with specific text</label>
+            </div>
+
+            <div class="outputcontainer">
+                <div class="input-group">
+                    <span class="input-group-text">allintitle:</span>
+                    <input type="text" class="form-control" id="allintitle" name="allintitle"
+                        placeholder="example: best practices">
+                </div>
+                <label>Finds pages with all the provided terms in the title</label>
+            </div>
+
+            <div class="outputcontainer">
+                <div class="input-group">
+                    <span class="input-group-text">allintext:</span>
+                    <input type="text" class="form-control" id="allintext" name="allintext"
+                        placeholder="example: technology trends">
+                </div>
+                <label>Finds pages with all the provided terms in the text</label>
+            </div>
+
+            <div class="outputcontainer">
+                <div class="input-group">
+                    <span class="input-group-text">allinurl:</span>
+                    <input type="text" class="form-control" id="allinurl" name="allinurl"
+                        placeholder="example: blog post">
+                </div>
+                <label>Finds pages with all the provided terms in the URL</label>
+            </div>
+
+            <div class="outputcontainer">
+                <div class="input-group">
+                    <span class="input-group-text">before:</span>
+                    <input type="text" class="form-control" id="before" name="before" placeholder="example: 2019-12-19">
+                </div>
+                <label>Finds pages created before a certain date</label>
+            </div>
+
+            <div class="outputcontainer">
+                <div class="input-group">
+                    <span class="input-group-text">after:</span>
+                    <input type="text" class="form-control" id="after" name="after" placeholder="example: 2020-09-11">
+                </div>
+                <label>Finds pages created after a certain date</label>
+            </div>
+
+            <div class="outputcontainer">
+                <div class="input-group">
+                    <span class="input-group-text">filetype:</span>
+                    <input type="text" class="form-control" id="filetype" name="filetype"
+                        placeholder="example: pdf, docx, txt">
+                </div>
+                <label>Finds a specific type of file</label>
+            </div>
+
+            <div class="outputcontainer">
+                <div class="input-group">
+                    <span class="input-group-text">cache:</span>
+                    <input type="text" class="form-control" id="cache" name="cache" placeholder="example: example.com">
+                </div>
+                <label>Finds a cached version of a page</label>
+            </div>
+
+            <div class="outputcontainer">
+                <div class="input-group">
+                    <span class="input-group-text">link:</span>
+                    <input type="text" class="form-control" id="link" name="link" placeholder="example: example.com">
+                </div>
+                <label>Finds pages that link to a specific URL</label>
+            </div>
+
+            <div class="outputcontainer">
+                <div class="input-group">
+                    <span class="input-group-text">related:</span>
+                    <input type="text" class="form-control" id="related" name="related"
+                        placeholder="example: example.com">
+                </div>
+                <label>Finds pages related to a specific URL</label>
+            </div>
+
+            <div class="outputcontainer">
+                <div class="input-group">
+                    <span class="input-group-text">inanchor:</span>
+                    <input type="text" class="form-control" id="inanchor" name="inanchor"
+                        placeholder="example: download now">
+                </div>
+                <label>Finds pages with specific anchor text</label>
+            </div>
+
+            <div class="outputcontainer">
+                <div class="input-group">
+                    <span class="input-group-text">numrange:</span>
+                    <input type="text" class="form-control" id="numrange" name="numrange"
+                        placeholder="example: 1000..5000">
+                </div>
+                <label>Finds results within a specified number range</label>
+            </div>
+
+            <div class="outputcontainer">
+                <div class="input-group">
+                    <span class="input-group-text">inpostauthor:</span>
+                    <input type="text" class="form-control" id="inpostauthor" name="inpostauthor"
+                        placeholder="example: John Doe">
+                </div>
+                <label>Finds pages written by a specific author</label>
+            </div>
+
+
+        </div>
+
+
+        <div id="dorkInputsContainer">
+
+
+        </div>
+
+
+        <div id="copyright">&copy; 2024 Google Dorkzz. DEV: Fareszz. All rights reserved.</div>
+    </div>
+</body>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</html>

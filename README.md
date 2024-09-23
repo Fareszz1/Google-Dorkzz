@@ -23,7 +23,7 @@
 **Google Dorkzz** is a web application designed to simplify the process of generating and searching Google Dork queries. This tool provides an intuitive interface for security researchers, penetration testers, and developers to perform various advanced Google searches (Google Dorking) in a more structured and user-friendly way.
 
 ## Try Google Dorkzz
- <a href="https://fareszz1.github.io/PhotoMorph">Click Here</a>
+ <a href="https://fareszz1.github.io/Google-Dorkzz/">Click Here</a>
 
 ## Features
 
@@ -46,7 +46,7 @@
 ## Installation
 
 **(You can just use it here)**
-<a href="https://fareszz1.github.io/PhotoMorph">Click Here</a>
+<a href="https://fareszz1.github.io/Google-Dorkzz/">Click Here</a>
 
 1. Clone the repository:
    ```bash

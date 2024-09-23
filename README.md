@@ -25,8 +25,6 @@
 ## Try Google Dorkzz
  <a href="https://fareszz1.github.io/PhotoMorph">Click Here</a>
 
- Here’s an updated version with emojis:
-
 ## Features
 
 - 🔍 **Search Bar**: Instantly search through different dork options using the search bar.
